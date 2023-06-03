@@ -97,10 +97,11 @@ void Bank::start(Bank* b1)
     while(1){
         cout << "请选择您的服务(输入对应数字获取服务)" << endl;
         cout << "1.创建账户\n" << "2.登录(未开放)\n"
-        << "3.存钱\n" << "4.取钱\n" << "5.保存(未开放)\n" << "6.退出\n";
+        << "3.存钱\n" << "4.取钱\n" << "5.保存(未开放)\n" 
+        << "6.查询记录\n" << "7.信息显示\n" << "8.退出\n";
         int res = 0;
         cin >> res;
-        while(res <= 0 || res > 6){
+        while(res <= 0 || res > 8){
             cout << "请输入正确数字\n" ;
             cin >> res;
         }
@@ -174,6 +175,14 @@ void Bank::start(Bank* b1)
                 break;
             }
             case 6:{
+                b1->check();
+                break;
+            }
+            case 7:{
+                b1->showBrief();
+                break;
+            }
+            case 8:{
                 exit(1);
             }
             default:
